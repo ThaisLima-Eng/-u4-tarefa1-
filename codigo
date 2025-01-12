@@ -1,0 +1,30 @@
+#include "pico/stdlib.h"
+#define led_pin_red 13
+
+int main() {
+    gpio_init(led_pin_red);
+    gpio_set_dir(led_pin_red, GPIO_OUT);
+     while (true) {
+        sleep_ms(3000);
+        for(int i= 0; i<3; i++){
+            gpio_put(led_pin_red, true);
+            sleep_ms(200);
+            gpio_put(led_pin_red, false);
+            sleep_ms(125);
+        }
+        sleep_ms(250);
+        for(int i=0; i<3;i++){
+            gpio_put(led_pin_red, true);
+            sleep_ms(800);
+            gpio_put(led_pin_red, false);
+            sleep_ms(125);
+        }
+        sleep_ms(250);
+        for(int i= 0; i<3; i++){
+            gpio_put(led_pin_red, true);
+            sleep_ms(200);
+            gpio_put(led_pin_red, false);
+            sleep_ms(125);
+        }
+     }
+}
